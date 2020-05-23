@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Nueva Toma
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="medicamentoForm">
+        <ion-item>
+            <ion-label>Medicina</ion-label>
+            <ion-select placeholder="Selecione Medicina" formControlName="medicina">
+                <ion-select-option value="{{medicina.id}}" *ngFor="let medicina of medicamentos | async ">{{medicina.nombre}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed ">Cantidad</ion-label>
+            <ion-input placeholder="P. ej: 1, 1/2, 2ml, etc " formControlName="cantidad"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="fixed ">Tomas al dia</ion-label>
+            <ion-input placeholder="P. ej: Cada 8 horas " formControlName="tomas"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-img [src]="foto"></ion-img>
+        </ion-item>
+
+
+        <ion-button (click)="nuevoMedicamento() ">
+            Añadir
+            <ion-icon slot="end " name="add "></ion-icon>
+        </ion-button>
+        <ion-button (click)="salir() " color="warning ">
+            Salir
+            <ion-icon slot="end " name="add "></ion-icon>
+        </ion-button>
+    </form>
+
+</ion-content>

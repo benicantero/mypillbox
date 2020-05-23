@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Listado de Tomas
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item>
+            <ion-label><b>NOMBRE</b></ion-label>
+            <ion-label><b>CANTIDAD</b></ion-label>
+            <ion-label><b>TOMAS/DIA</b></ion-label>
+            <ion-label><b>FOTO</b></ion-label>
+        </ion-item>
+
+        <ion-item *ngFor="let medicamento of medicamentos | async">
+            <ion-label [routerLink]="['/update/',medicamento.id]">{{medicamento.nombre}}</ion-label>
+            <ion-label>{{medicamento.cantidad}}</ion-label>
+            <ion-label>{{medicamento.tomas}}</ion-label>
+            <ion-label>{{medicamento.foto}}</ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

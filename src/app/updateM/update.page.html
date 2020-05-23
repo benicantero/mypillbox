@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Modificar Medicina</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="fixed"> <b>NOMBRE</b></ion-label>
+        <ion-input placeholder="Nombre medicina" [(ngModel)]="medicina.nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="fixed"><b>FOTO</b></ion-label>
+        <ion-input placeholder="P. ej: Frescos, Perecederos, Bebidas..." [(ngModel)]="medicina.foto"></ion-input>
+    </ion-item>
+
+
+
+    <ion-button (click)="modificarMedicina()">Modicar</ion-button>
+
+    <ion-button (click)="borrarMedicina()">Borrar</ion-button>
+
+
+</ion-content>

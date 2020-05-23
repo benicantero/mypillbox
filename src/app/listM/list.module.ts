@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
 
-import { FolderPageRoutingModule } from './folder-routing.module';
-
-import { FolderPage } from './folder.page';
+import { ListPage } from './list.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule
+    RouterModule.forChild([
+      {
+        path: '',
+        component: ListPage
+      }
+    ])
   ],
-  declarations: [FolderPage]
+  declarations: [ListPage]
 })
-export class FolderPageModule {}
+export class ListMPageModule {}

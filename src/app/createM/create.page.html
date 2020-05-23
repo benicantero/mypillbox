@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Añadir medicina
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="fixed">Nombre</ion-label>
+        <ion-input placeholder="Nombre de la medicina" [(ngModel)]="medicina.nombre"></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="tertiary" (click)="addPhoto('library')">
+        <ion-icon slot="start" name="image"></ion-icon>
+        Abrir fototeca
+    </ion-button>
+
+    <ion-button expand="block" color="secondary" (click)="addPhoto('camera')">
+        <ion-icon slot="start" name="camera"></ion-icon>
+        Hacer una foto
+    </ion-button>
+
+    <div class="flex">
+        <div class="img-box">
+            <img [src]="image">
+        </div>
+    </div>
+
+    <ion-button expand="block" color="warning" (click)="uploadFirebase()">
+        <ion-icon slot="start" name="cloud-upload"></ion-icon>
+        Seleccionar la foto
+    </ion-button>
+
+    <ion-button (click)="nuevaMedicina()">
+        Añadir
+        <ion-icon slot="end" name="add"></ion-icon>
+    </ion-button>
+    <ion-button (click)="salir()" color="danger">
+        Salir
+        <ion-icon slot="end " name="add "></ion-icon>
+    </ion-button>
+</ion-content>

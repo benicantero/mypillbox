@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Tus Medicinas
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label> <b>NOMBRE</b></ion-label>
+            <ion-label><b>FOTO</b></ion-label>
+        </ion-item>
+
+        <ion-item *ngFor="let medicina of medicinas|async">
+            <ion-label [routerLink]="['/updateM/',medicina.id]">{{medicina.nombre}}</ion-label>
+            <ion-label><ion-img [src]="medicina.path"></ion-img></ion-label>
+        </ion-item>
+    </ion-list>
+    <ion-button (click)="salir()" color="danger">
+        Salir
+        <ion-icon slot="end " name="add "></ion-icon>
+    </ion-button>
+</ion-content>
