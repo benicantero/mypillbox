@@ -82,4 +82,8 @@ export class UpdatePage implements OnInit {
   );
 }
 
+salir() {
+  this.router.navigate(['home']);
+}
+
 }

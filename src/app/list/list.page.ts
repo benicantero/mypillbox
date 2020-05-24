@@ -16,7 +16,7 @@ export class ListPage implements OnInit {
   private selectedItem: any;
   public items: Array<{ title: string; note: string; icon: string }> = [];
   constructor(
-    private medicinaService : MedicinasService,
+    private medicinaService: MedicinasService,
     private router: Router,
     private medicamentoService: MedicamentosService) {
 
@@ -25,15 +25,19 @@ export class ListPage implements OnInit {
 
   ngOnInit() {
     this.medicamentos = this.medicamentoService.getMedicamentos().pipe(
-      map(tomas=>{
+      map(tomas => {
         tomas.forEach(toma => {
           console.log(toma);
 
         });
         ;
         return tomas;
-        
+
       })
     );
-}
+  }
+  salir() {
+    this.router.navigate(['home']);
+  }
+
 }

@@ -66,5 +66,7 @@ export class CreatePage implements OnInit {
       () => this.router.navigate(['list'])
     );
   }
-  salir() { this.router.navigate(['list']); }
+  salir() {
+    this.router.navigate(['home']);
+  }
 }

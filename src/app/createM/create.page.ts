@@ -102,6 +102,8 @@ export class CreatePage implements OnInit {
     );
   }
 
-  salir() { this.router.navigate(['listM']); }
+  salir() {
+    this.router.navigate(['home']);
+  }
 
 }
